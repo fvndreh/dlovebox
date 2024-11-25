@@ -9,4 +9,12 @@ body {
 
 #about {
   background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  #about {
+    background-image: url('./assets/background-mobile.jpg');
+    background-size: contain;
+  }
 }
