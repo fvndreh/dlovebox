@@ -10,9 +10,3 @@ body {
 #about {
   background-image: url('./assets/background.jpg');
 }
-
-@media (max-width: 768px) {
-  #about {
-    background-attachment: scroll;
-  }
-}
