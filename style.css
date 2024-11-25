@@ -15,6 +15,6 @@ body {
 @media (max-width: 768px) {
   #about {
     background-image: url('./assets/background-mobile.jpg');
-    background-size: contain;
+    background-attachment: scroll;
   }
 }
