@@ -1,64 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DLoveBox</title>
+    <title>DLoveBox - CrossFit</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" target="_blank" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-gray-100">
-    <nav class="flex custom-yellow border-b border-gray-300">
-      <div class="flex mx-auto sm:px-6 lg:px-8 w-full items-center">
-        <div
-          class="flex-shrink-0 flex items-center md:pl-12 sm:pl-0 w-3/5 md:w-auto justify-end md:justify-start"
-        >
-          <img class="w-[5rem]" src="./assets/logo.png" alt="DloveBox" />
-        </div>
+  <body class="bg-gray-900 text-white">
+    
+    <nav
+      class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-blur-md border-b border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="#/" class="flex-shrink-0">
+            <img class="w-12 h-12" src="./assets/logo.png" alt="DLoveBox" />
+          </a>
 
-        <div class="flex flex-1 justify-center h-18">
-          <div class="hidden sm:flex sm:space-x-8">
+          <div class="hidden md:flex space-x-8">
             <a
-              href="#"
-              class="flex items-center text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-bold"
+              href="#/"
+              class="nav-link text-gray-300 hover:text-white text-sm font-semibold transition"
+              data-route="/"
               >Inicio</a
             >
             <a
-              href="#about"
-              class="flex items-center text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-bold"
-              >Nosotros</a
+              href="#/coaches"
+              class="nav-link text-gray-300 hover:text-white text-sm font-semibold transition"
+              data-route="/coaches"
+              >Coaches</a
             >
             <a
-              href="#schedule"
-              class="flex items-center text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-bold"
+              href="#/schedule"
+              class="nav-link text-gray-300 hover:text-white text-sm font-semibold transition"
+              data-route="/schedule"
               >Horarios</a
             >
             <a
-              href="#plans"
-              class="flex items-center text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-bold"
+              href="#/pricing"
+              class="nav-link text-gray-300 hover:text-white text-sm font-semibold transition"
+              data-route="/pricing"
               >Planes</a
             >
             <a
-              href="#contact"
-              class="flex items-center text-black hover:text-gray-800 px-3 py-2 rounded-md text-sm font-bold"
+              href="#/contact"
+              class="nav-link text-gray-300 hover:text-white text-sm font-semibold transition"
+              data-route="/contact"
               >Contacto</a
             >
           </div>
-        </div>
 
-        <div class="flex sm:hidden items-center ml-auto mr-4">
-          <button
-            id="menu-button"
-            class="text-black hover:text-gray-800 focus:outline-none"
-          >
+          <button id="menu-button" class="md:hidden text-white">
             <svg
               class="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              x="0"
-              y="0"
             >
               <path
                 stroke-linecap="round"
@@ -71,285 +69,576 @@
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        class="sm:hidden hidden fixed inset-0 bg-white bg-opacity-90 z-50"
-      >
-        <div class="flex justify-end p-4">
-          <button id="close-button" class="text-black text-3xl">&times;</button>
-        </div>
-        <div class="flex flex-col items-center space-y-4 p-8">
-          <a href="#" class="text-black block text-xl menu-item">Inicio</a>
-          <a href="#about" class="text-black block text-xl menu-item"
-          >Nosotros</a
-        >
-          <a href="#schedule" class="text-black block text-xl menu-item"
+      
+      <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="#/"
+            class="nav-link block hover:text-white px-3 py-2 text-base font-medium menu-item"
+            data-route="/"
+            >Inicio</a
+          >
+          <a
+            href="#/coaches"
+            class="nav-link block hover:text-white px-3 py-2 text-base font-medium menu-item"
+            data-route="/coaches"
+            >Coaches</a
+          >
+          <a
+            href="#/schedule"
+            class="nav-link block hover:text-white px-3 py-2 text-base font-medium menu-item"
+            data-route="/schedule"
             >Horarios</a
           >
-          <a href="#plans" class="text-black block text-xl menu-item">Planes</a>
-          <a href="#contact" class="text-black block text-xl menu-item"
+          <a
+            href="#/pricing"
+            class="nav-link block hover:text-white px-3 py-2 text-base font-medium menu-item"
+            data-route="/pricing"
+            >Planes</a
+          >
+          <a
+            href="#/contact"
+            class="nav-link block hover:text-white px-3 py-2 text-base font-medium menu-item"
+            data-route="/contact"
             >Contacto</a
           >
         </div>
       </div>
     </nav>
-    <section
-      id="about"
-      class="relative bg-gray-800 text-white min-h-screen bg-no-repeat bg-cover bg-center"
-    >
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div
-        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center"
-      >
-        <h2 class="text-5xl font-extrabold">
-          ¡Transforma tu vida con fuerza y dedicación!
-        </h2>
-        <p class="mt-4 text-lg font-medium">
-          Desafía tus límites, supera tus miedos y alcanza el mejor estado
-          físico de tu vida. <br />
-          Únete a nuestra comunidad y descubre lo que eres capaz de lograr.
-        </p>
-      </div>
 
-      <div class="relative bg-white py-16">
-        <h3 class="text-3xl font-bold text-gray-800 text-center mb-6">
-          ¿Que es el CrossFit?
-        </h3>
-        <p class="text-center text-lg text-gray-600 mb-2 px-4">
-          El CrossFit es un programa de entrenamiento que combina levantamiento de pesas, gimnasia y ejercicios cardiovasculares en entrenamientos intensos y variados. Está diseñado para mejorar la fuerza, la resistencia y la movilidad, mientras desafía tu cuerpo y mente. Con nuestros entrenamientos, cada sesión es una oportunidad para superarte y alcanzar tus metas. ¡No importa tu nivel de experiencia, en CrossFit te ayudamos a llegar más allá!
-        </p>
-        <h3 class="text-3xl font-bold text-gray-800 text-center mb-6">
-          Conoce a Nuestros Coaches
-        </h3>
-        <p class="text-center text-lg text-gray-600 md:mb-0 mb-2 px-4">
-          Nuestros coaches están certificados en <strong>RCP en Emergencias Uso DEA y OVACE</strong> por <strong>Trainer Chile Capacitaciones SpA</strong>.
-        </p>
-        <p class="text-center text-lg text-gray-600 mb-8 px-4">
-          Además, contamos con una máquina de <strong>DEA (Desfibrilador Externo Automático)</strong> en nuestro establecimiento, disponible para garantizar tu seguridad durante los entrenamientos.
-        </p>
-        <div class="flex justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="relative overflow-hidden">
-            <div
-              class="grid md:grid-cols-5 grid-cols-1 items-center md:space-x-8 transition-transform duration-500 ease-in-out md:space-y-0 space-y-4"
-              id="coachesCarousel"
-            >
-              <div
-                class="flex-shrink-0 bg-gray-100 p-6 rounded-lg shadow-md text-center"
+    
+    <div id="page-container" class="pt-16">
+      
+      <div id="home-page" class="page-section">
+        <section
+          id="hero"
+          class="relative w-full h-screen bg-cover bg-center"
+          style="background-image: url('./assets/background.jpg')"
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div
+            class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4"
+          >
+            <img
+              class="w-40 h-40 mb-8"
+              src="./assets/logo.png"
+              alt="DLoveBox"
+            />
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              ¡Transforma tu vida!
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl">
+              Desafía tus límites y descubre lo que eres capaz de lograr.
+            </p>
+            <div class="flex gap-4 flex-wrap justify-center">
+              <a
+                href="#/coaches"
+                class="px-8 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-bold transition"
+                >Descubre Más</a
               >
-                <img
-                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
-                  alt="Coach 1"
-                  class="w-36 h-36 mx-auto rounded-full object-cover mb-4"
-                />
-                <h4 class="text-xl font-semibold text-gray-800">Coach 1</h4>
-                <p class="text-gray-600">Especialista en fuerza</p>
+              <a
+                href="#/contact"
+                class="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 rounded-lg font-bold transition"
+                >Únete Ahora</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="py-16 bg-gray-800">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+              <h2 class="text-4xl font-black mb-4">
+                ¿Por qué elegir DLoveBox?
+              </h2>
+              <p class="text-gray-300 text-lg">
+                Lo mejor en entrenamiento CrossFit, Halterofilia y GAP
+              </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div
+                class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover:border-red-600 transition"
+              >
+                <div class="text-3xl mb-4">💪</div>
+                <h3 class="text-xl font-bold mb-3">Entrenamiento Intenso</h3>
+                <p class="text-gray-300">
+                  Programas de CrossFit diseñados para todos los niveles, desde
+                  principiantes hasta atletas avanzados.
+                </p>
               </div>
               <div
-                class="flex-shrink-0 bg-gray-100 p-6 rounded-lg shadow-md text-center"
+                class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover:border-red-600 transition"
               >
-                <img
-                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
-                  alt="Coach 2"
-                  class="w-36 h-36 mx-auto rounded-full object-cover mb-4"
-                />
-                <h4 class="text-xl font-semibold text-gray-800">Coach 2</h4>
-                <p class="text-gray-600">Técnica y movilidad</p>
+                <div class="text-3xl mb-4">🏋️</div>
+                <h3 class="text-xl font-bold mb-3">Halterofilia</h3>
+                <p class="text-gray-300">
+                  Aprende las técnicas olímpicas de levantamiento con nuestros coaches certificados para aumentar tu fuerza.
+                </p>
               </div>
               <div
-                class="flex-shrink-0 bg-gray-100 p-6 rounded-lg shadow-md text-center"
+                class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover:border-red-600 transition"
               >
-                <img
-                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
-                  alt="Coach 3"
-                  class="w-36 h-36 mx-auto rounded-full object-cover mb-4"
-                />
-                <h4 class="text-xl font-semibold text-gray-800">Coach 3</h4>
-                <p class="text-gray-600">Cardio extremo</p>
+                <div class="text-3xl mb-4">🍑</div>
+                <h3 class="text-xl font-bold mb-3">GAP</h3>
+                <p class="text-gray-300">
+                  Clases especializadas enfocadas en glúteos, abdominales y cadena posterior.
+                </p>
               </div>
               <div
-                class="flex-shrink-0 bg-gray-100 p-6 rounded-lg shadow-md text-center"
+                class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover:border-red-600 transition"
               >
-                <img
-                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
-                  alt="Coach 4"
-                  class="w-36 h-36 mx-auto rounded-full object-cover mb-4"
-                />
-                <h4 class="text-xl font-semibold text-gray-800">Coach 4</h4>
-                <p class="text-gray-600">Halterofilia</p>
+                <div class="text-3xl mb-4">🏅</div>
+                <h3 class="text-xl font-bold mb-3">Coaches Certificados</h3>
+                <p class="text-gray-300">
+                  Nuestros coaches tienen certificación en RCP, DEA y OVACE para
+                  tu seguridad total.
+                </p>
               </div>
               <div
-                class="flex-shrink-0 bg-gray-100 p-6 rounded-lg shadow-md text-center"
+                class="bg-gray-900 p-8 rounded-lg border border-gray-700 hover:border-red-600 transition"
               >
-                <img
-                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
-                  alt="Coach 5"
-                  class="w-36 h-36 mx-auto rounded-full object-cover mb-4"
-                />
-                <h4 class="text-xl font-semibold text-gray-800">Coach 5</h4>
-                <p class="text-gray-600">Metcon</p>
+                <div class="text-3xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-3">Comunidad</h3>
+                <p class="text-gray-300">
+                  Sé parte de una comunidad motivada que te apoyará en tu viaje
+                  de transformación.
+                </p>
+              </div>
+          </div>
+        </section>
+
+        <section class="py-16 bg-gray-900 border-t border-gray-800">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div class="text-5xl font-black text-red-600 mb-2">100+</div>
+                <p class="text-gray-300 text-lg">Miembros activos</p>
+              </div>
+              <div>
+                <div class="text-5xl font-black text-red-600 mb-2">5+</div>
+                <p class="text-gray-300 text-lg">Coaches expertos</p>
+              </div>
+              <div>
+                <div class="text-5xl font-black text-red-600 mb-2">24/7</div>
+                <p class="text-gray-300 text-lg">Soporte disponible</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
 
-    <section id="schedule" class="bg-gray-100 py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-gray-800">
-          Horarios de Entrenamiento
-        </h2>
-        <p class="mt-4 text-gray-600">
-          Estos son los horarios en los que se realizan clases específicas.
-          ¡Encuentra el momento perfecto para unirte a nosotros!
-        </p>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Mañana</h3>
-            <p class="mt-2 text-gray-600">
-              Clases programadas de <strong>9:00 AM y 10:00 AM</strong>.
-            </p>
-            <p class="text-gray-600">
-              Los días pueden variar cada semana, ¡consúltanos para más
-              detalles!
-            </p>
-          </div>
+      
+      <div id="coaches-page" class="page-section hidden">
+        <section class="min-h-screen pt-20 pb-16">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h1 class="text-5xl md:text-6xl font-black mb-4">
+                Nuestros Coaches
+              </h1>
+              <p class="text-gray-300 text-lg">
+                Profesionales certificados dedicados a tu transformación
+              </p>
+            </div>
 
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Tarde</h3>
-            <p class="mt-2 text-gray-600">
-              Clases programadas entre:
-              <strong>7:15 PM y 10:15 PM</strong> (Lunes a Jueves).
-            </p>
-            <p class="text-gray-600">
-              Los viernes, el horario es de <strong>5:00 PM a 9:30 PM</strong>.
-            </p>
-          </div>
+            <div class="bg-gray-800 rounded-lg p-8 mb-12">
+              <h2 class="text-2xl font-bold mb-4">Certificaciones</h2>
+              <p class="text-gray-300 mb-4">
+                Nuestros coaches están certificados en
+                <strong>RCP en Emergencias, Uso DEA y OVACE</strong> por
+                <strong>Trainer Chile Capacitaciones SpA</strong>.
+              </p>
+              <p class="text-gray-300">
+                Contamos con una máquina de
+                <strong>DEA (Desfibrilador Externo Automático)</strong> en
+                nuestro establecimiento para garantizar tu seguridad.
+              </p>
+            </div>
 
-          <div class="p-6 bg-white rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">
-              Sábados y Domingos
-            </h3>
-            <p class="mt-2 text-gray-600">
-              Clases programadas de: <strong>10:00 AM - 11:00 AM</strong>.
-            </p>
-            <p class="mt-2 text-gray-600">
-              ¡Los fines de semana son perfectos para superar tus límites y
-              alcanzar nuevas metas!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="plans" class="bg-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-gray-800">Nuestros Planes</h2>
-        <p class="mt-4 text-gray-600">
-          Elige el plan que mejor se adapte a tus objetivos.
-        </p>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Plan Básico</h3>
-            <p class="mt-2 text-gray-600">3 sesiones semanales</p>
-            <p class="mt-4 text-xl font-bold text-gray-800">$40.000/mes</p>
-          </div>
-          <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Plan Intermedio</h3>
-            <p class="mt-2 text-gray-600">4 sesiones semanales</p>
-            <p class="mt-4 text-xl font-bold text-gray-800">$50.000/mes</p>
-          </div>
-          <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Plan Avanzado</h3>
-            <p class="mt-2 text-gray-600">5 sesiones semanales</p>
-            <p class="mt-4 text-xl font-bold text-gray-800">$60.000/mes</p>
-          </div>
-          <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-gray-800">Plan Ilimitado</h3>
-            <p class="mt-2 text-gray-600">Sin limite de clases</p>
-            <p class="mt-4 text-xl font-bold text-gray-800">$80.000/mes</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="bg-gray-100 py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-extrabold text-gray-800 text-center mb-12">
-          ¡Conéctate con nosotros!
-        </h2>
-
-        <div class="grid grid-cols-1 gap-8">
-          <div class="flex flex-col items-center justify-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">
-              ¡Síguenos en Instagram!
-            </h3>
-            <a
-              href="https://instagram.com/dlovebox.cf"
-              target="_blank"
-              class="inline-flex items-center justify-center px-6 py-3 bg-pink-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-pink-600 transition duration-300 w-[18rem]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                class="w-6 h-6 mr-2"
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-red-600 transition"
               >
-                <path
-                  fill="currentColor"
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186c-39.6 0-71.9-32.3-71.9-71.9s32.3-71.9 71.9-71.9 71.9 32.3 71.9 71.9-32.3 71.9-71.9 71.9zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.4-36.2-93.8s-58-34.5-93.8-36.2c-37-2.1-148.2-2.1-185.2 0-35.7 1.7-67.4 9.9-93.8 36.2s-34.5 58-36.2 93.8c-2.1 37-2.1 148.2 0 185.2 1.7 35.7 9.9 67.4 36.2 93.8s58 34.5 93.8 36.2c37 2.1 148.2 2.1 185.2 0 35.7-1.7 67.4-9.9 93.8-36.2s34.5-58 36.2-93.8c2.1-37 2.1-148.2 0-185.2zm-48.5 224c-7.8 19.5-22.9 34.7-42.3 42.3-29.3 11.6-99 8.9-132.8 8.9s-103.4 2.6-132.8-8.9c-19.5-7.8-34.7-22.9-42.3-42.3-11.6-29.3-8.9-99-8.9-132.8s-2.6-103.4 8.9-132.8c7.8-19.5 22.9-34.7 42.3-42.3 29.3-11.6 99-8.9 132.8-8.9s103.4-2.6 132.8 8.9c19.5 7.8 34.7 22.9 42.3 42.3 11.6 29.3 8.9 99 8.9 132.8s2.7 103.5-8.9 132.8z"
+                <img
+                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
+                  alt="Coach"
+                  class="w-full h-64 object-cover"
                 />
-              </svg>
-              ¡Síguenos!
-            </a>
-          </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Coach 1</h3>
+                  <p class="text-red-500 font-semibold mb-3">
+                    Especialista en Fuerza
+                  </p>
+                  <p class="text-gray-300 text-sm">
+                    Experto en levantamiento de pesas olímpico y powerlifting.
+                  </p>
+                </div>
+              </div>
 
-          <div class="flex flex-col items-center justify-center">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">
-              Contáctanos por WhatsApp
-            </h3>
-            <p class="text-gray-600 text-center mb-6">
-              ¿Tienes preguntas o quieres inscribirte? Envíanos un mensaje
-              rápido y te responderemos.
-            </p>
-            <a
-              href="https://wa.me/+56997416505?text=¡Hola!%20Estoy%20interesado/a%20en%20inscribirme%20a%20DLoveBox.%20¿Podrían%20darme%20más%20información%20sobre%20los%20horarios%20y%20la%20inscripción?"
-              target="_blank"
-              class="inline-flex items-center justify-center px-6 py-3 bg-green-500 text-white text-lg font-medium rounded-lg shadow-md hover:bg-green-600 transition duration-300 w-[18rem]"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                alt="WhatsApp Icon"
-                class="w-6 h-6 mr-2"
-              />
-              Escríbenos por WhatsApp
-            </a>
-          </div>
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-red-600 transition"
+              >
+                <img
+                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
+                  alt="Coach"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Coach 2</h3>
+                  <p class="text-red-500 font-semibold mb-3">
+                    Técnica y Movilidad
+                  </p>
+                  <p class="text-gray-300 text-sm">
+                    Especialista en movimientos funcionales y flexibilidad.
+                  </p>
+                </div>
+              </div>
 
-          <div class="flex flex-col items-center justify-center mt-12">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">
-              ¿Dónde nos ubicamos?
-            </h3>
-            <iframe
-              class="w-full sm:w-2/3 h-64 rounded-lg shadow-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.842052518881!2d-70.72869462357819!3d-33.40128469499734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c1717123d43d%3A0x2a52368082fb4f1c!2sDlovebox.cf!5e0!3m2!1ses!2scl!4v1732412136231!5m2!1ses!2scl"
-              allowfullscreen=""
-              loading="lazy"
-            >
-            </iframe>
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-red-600 transition"
+              >
+                <img
+                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
+                  alt="Coach"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Coach 3</h3>
+                  <p class="text-red-500 font-semibold mb-3">Cardio Extremo</p>
+                  <p class="text-gray-300 text-sm">
+                    Experto en entrenamiento cardiovascular de alta intensidad.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-red-600 transition"
+              >
+                <img
+                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
+                  alt="Coach"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Coach 4</h3>
+                  <p class="text-red-500 font-semibold mb-3">Halterofilia</p>
+                  <p class="text-gray-300 text-sm">
+                    Especialista en snatch, clean & jerk y técnica avanzada.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-red-600 transition"
+              >
+                <img
+                  src="https://www.versuscrossfit.com/wp-content/uploads/2018/02/mateo.jpg"
+                  alt="Coach"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-2">Coach 5</h3>
+                  <p class="text-red-500 font-semibold mb-3">Metcon Master</p>
+                  <p class="text-gray-300 text-sm">
+                    Experto en entrenamientos funcionales complejos.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-    <footer class="bg-gray-800 text-white py-4">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm">
-          &copy; 2024
-          <a href="https://www.instagram.com/dlovebox.cf/" target="_blank" class="text-indigo-400 hover:text-indigo-300">DLoveBox.cf</a>.
-        </br>
-          Todos los derechos reservados.
-        </p>
+
+      
+      <div id="schedule-page" class="page-section hidden">
+        <section class="min-h-screen pt-20 pb-16">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h1 class="text-5xl md:text-6xl font-black mb-4">
+                Horarios de Entrenamiento
+              </h1>
+              <p class="text-gray-300 text-lg">
+                Encuentra el horario que mejor se adapte a ti
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-red-600">
+                <h2 class="text-3xl font-black mb-6">🌅 Clases de Mañana</h2>
+                <div class="space-y-4">
+                  <div class="bg-gray-900 p-4 rounded">
+                    <p class="text-red-500 font-bold text-lg">9:00 AM</p>
+                    <p class="text-gray-300">
+                      Clases generales para todos los niveles
+                    </p>
+                  </div>
+                  <div class="bg-gray-900 p-4 rounded">
+                    <p class="text-red-500 font-bold text-lg">10:00 AM</p>
+                    <p class="text-gray-300">Clases intensas de CrossFit</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-red-600">
+                <h2 class="text-3xl font-black mb-6">🌆 Clases de Tarde</h2>
+                <div class="space-y-4">
+                  <div class="bg-gray-900 p-4 rounded">
+                    <p class="text-red-500 font-bold text-lg">Lunes a Jueves</p>
+                    <p class="text-gray-300">7:15 PM - 10:15 PM</p>
+                    <p class="text-sm text-gray-400">
+                      Múltiples horarios disponibles
+                    </p>
+                  </div>
+                  <div class="bg-gray-900 p-4 rounded">
+                    <p class="text-red-500 font-bold text-lg">Viernes</p>
+                    <p class="text-gray-300">5:00 PM - 9:30 PM</p>
+                    <p class="text-sm text-gray-400">Horario extendido</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg p-8 border-l-4 border-red-600">
+              <h2 class="text-3xl font-black mb-6">🏋️ Fines de Semana</h2>
+              <div class="bg-gray-900 p-4 rounded">
+                <p class="text-red-500 font-bold text-lg">Sábado y Domingo</p>
+                <p class="text-gray-300">10:00 AM - 11:00 AM</p>
+                <p class="text-sm text-gray-400 mt-2">
+                  Clases comunitarias perfectas para superar tus límites
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="mt-12 bg-blue-900 bg-opacity-30 border border-blue-600 rounded-lg p-8 text-center"
+            >
+              <p class="text-lg text-gray-300 mb-4">
+                ¿Tienes dudas sobre los horarios?
+              </p>
+              <a
+                href="#/contact"
+                class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-bold transition"
+                >Contáctanos</a
+              >
+            </div>
+          </div>
+        </section>
       </div>
+
+      
+      <div id="pricing-page" class="page-section hidden">
+        <section class="min-h-screen pt-20 pb-16">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h1 class="text-5xl md:text-6xl font-black mb-4">
+                Nuestros Planes
+              </h1>
+              <p class="text-gray-300 text-lg">
+                Elige el plan que mejor se adapte a tus objetivos
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-red-600 transition"
+              >
+                <h3 class="text-2xl font-black mb-4">Plan Básico</h3>
+                <div class="text-4xl font-black text-red-600 mb-6">
+                  $40.000<span class="text-sm text-gray-400">/mes</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> 3 sesiones
+                    semanales
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Acceso a
+                    equipamiento
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Comunidad
+                  </li>
+                </ul>
+                
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-red-600 transition"
+              >
+                <h3 class="text-2xl font-black mb-4">Plan Intermedio</h3>
+                <div class="text-4xl font-black text-red-600 mb-6">
+                  $50.000<span class="text-sm text-gray-400">/mes</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> 4 sesiones
+                    semanales
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Asesoramiento de
+                    coaches
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Evaluación inicial
+                  </li>
+                </ul>
+                
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-red-600 transition"
+              >
+                <h3 class="text-2xl font-black mb-4">Plan Avanzado</h3>
+                <div class="text-4xl font-black text-red-600 mb-6">
+                  $60.000<span class="text-sm text-gray-400">/mes</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> 5 sesiones
+                    semanales
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Plan personalizado
+                  </li>
+                  <li class="text-gray-300 flex items-center">
+                    <span class="text-red-600 mr-3">✓</span> Seguimiento mensual
+                  </li>
+                </ul>
+                
+              </div>
+
+              
+            </div>
+
+            <div class="mt-12 bg-gray-800 rounded-lg p-8 text-center">
+              <p class="text-lg text-gray-300 mb-4">
+                ¿Preguntas sobre nuestros planes?
+              </p>
+              <a
+                href="#/contact"
+                class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-bold transition"
+                >Contáctanos</a
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+
+      
+      <div id="contact-page" class="page-section hidden">
+        <section class="min-h-screen pt-20 pb-16">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h1 class="text-5xl md:text-6xl font-black mb-4">
+                ¡Conéctate con Nosotros!
+              </h1>
+              <p class="text-gray-300 text-lg">
+                Estamos aquí para responder tus preguntas
+              </p>
+            </div>
+
+            <div class="text-center mb-12">
+              <a href="#/pricing" class="inline-block px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg font-bold text-lg transition hover:shadow-lg hover:shadow-red-600/50 transform hover:scale-105">
+                🎯 Agenda tu clase gratis
+              </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+              <div
+                class="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    class="w-16 h-16 mx-auto text-pink-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 255.9 287.7 141 224.1 141zm0 186c-39.6 0-71.9-32.3-71.9-71.9s32.3-71.9 71.9-71.9 71.9 32.3 71.9 71.9-32.3 71.9-71.9 71.9zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.4-36.2-93.8s-58-34.5-93.8-36.2c-37-2.1-148.2-2.1-185.2 0-35.7 1.7-67.4 9.9-93.8 36.2s-34.5 58-36.2 93.8c-2.1 37-2.1 148.2 0 185.2 1.7 35.7 9.9 67.4 36.2 93.8s58 34.5 93.8 36.2c37 2.1 148.2 2.1 185.2 0 35.7-1.7 67.4-9.9 93.8-36.2s34.5-58 36.2-93.8c2.1-37 2.1-148.2 0-185.2zm-48.5 224c-7.8 19.5-22.9 34.7-42.3 42.3-29.3 11.6-99 8.9-132.8 8.9s-103.4 2.6-132.8-8.9c-19.5-7.8-34.7-22.9-42.3-42.3-11.6-29.3-8.9-99-8.9-132.8s-2.6-103.4 8.9-132.8c7.8-19.5 22.9-34.7 42.3-42.3 29.3-11.6 99-8.9 132.8-8.9s103.4-2.6 132.8 8.9c19.5 7.8 34.7 22.9 42.3 42.3 11.6 29.3 8.9 99 8.9 132.8s2.7 103.5-8.9 132.8z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Síguenos en Instagram</h3>
+                <p class="text-gray-300 mb-6">
+                  Mantente actualizado con nuestras actividades
+                </p>
+                <a
+                  href="https://instagram.com/dlovebox.cf"
+                  target="_blank"
+                  class="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg font-bold transition hover:shadow-lg hover:shadow-pink-500/50"
+                  >Ver Instagram</a
+                >
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center"
+              >
+                <div class="mb-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    class="w-16 h-16 mx-auto text-green-500"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.9 69.1 27.4 106.7 27.4 122.4 0 222-99.6 222-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-67.9-4.3-6.8c-18.1-28.8-27.6-62.2-27.6-96.9 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.6-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">WhatsApp</h3>
+                <p class="text-gray-300 mb-6">
+                  Envíanos un mensaje y responderemos en minutos
+                </p>
+                <a
+                  href="https://wa.me/+56997416505"
+                  target="_blank"
+                  class="inline-block px-8 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-bold transition hover:shadow-lg hover:shadow-green-500/50"
+                  >Contáctanos</a
+                >
+              </div>
+
+              <div
+                class="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center"
+              >
+                <div class="text-5xl mb-4">📍</div>
+                <h3 class="text-2xl font-bold mb-4">Ubicación</h3>
+                <p class="text-gray-300 mb-6">
+                  Visítanos en nuestro box CrossFit
+                </p>
+                <a
+                  href="https://goo.gl/maps/dlovebox"
+                  target="_blank"
+                  class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-bold transition"
+                  >Ver en Maps</a
+                >
+              </div>
+            </div>
+
+            <div
+              class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700"
+            >
+              <h2 class="text-2xl font-bold p-6 border-b border-gray-700">
+                Encuéntranos
+              </h2>
+              <iframe
+                class="w-full h-96"
+                src="https://maps.google.com/maps?q=Dlovebox.cf+-70.72869,-33.40128&hl=es&z=15&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    
+    <footer
+      class="bg-gray-900 border-t border-gray-800 text-center py-8 text-gray-400"
+    >
+      <p>&copy; 2026 DLoveBox.cf | Todos los derechos reservados.</p>
     </footer>
-    <script src="index.js" defer></script>
+
+    <script src="index.js"></script>
   </body>
 </html>
